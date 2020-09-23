@@ -5,8 +5,12 @@ import { connect } from "react-redux";
 import { firestoreConnect } from "react-redux-firebase";
 import { compose } from "redux";
 class Dashboard extends Component {
+  componentDidUpdate() {
+    console.log(this.props);
+  }
   render() {
     // console.log(this.props);
+
     const { projects } = this.props;
     return (
       <div className="dashboard container">
