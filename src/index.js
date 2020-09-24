@@ -19,6 +19,7 @@ const store = createStore(
     reactReduxFirebase(fbConfig, { attachAuthIsReady: true })
   )
 );
+//waiting till we get the auth data from firebase so that we display the  navbar and all the component only after we get the data from the server
 store.firebaseAuthIsReady.then(() => {
   ReactDOM.render(
     <Provider store={store}>
