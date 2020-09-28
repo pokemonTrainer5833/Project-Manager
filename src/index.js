@@ -16,7 +16,11 @@ const store = createStore(
   composeEnhancers(
     applyMiddleware(thunk.withExtraArgument({ getFirebase, getFirestore })),
     reduxFirestore(fbConfig),
-    reactReduxFirebase(fbConfig, { attachAuthIsReady: true })
+    reactReduxFirebase(fbConfig, {
+      useFirestoreForProfile: true,
+      userProfile: "users",
+      attachAuthIsReady: true,
+    })
   )
 );
 //waiting till we get the auth data from firebase so that we display the  navbar and all the component only after we get the data from the server
